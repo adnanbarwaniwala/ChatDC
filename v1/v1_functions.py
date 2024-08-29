@@ -9,7 +9,7 @@ import streamlit as st
 
 def connect_to_vector_store():
     embedding_function = OpenAIEmbeddings(model='text-embedding-3-small', api_key=st.secrets['general']['openai_api_key'])
-    db = Chroma(persist_directory='./vector_dc_info', embedding_function=embedding_function)
+    db = Chroma(persist_directory='v1/vector_dc_info', embedding_function=embedding_function)
     return db
 
 
