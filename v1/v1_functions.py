@@ -1,36 +1,14 @@
 from langchain_groq import ChatGroq
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.prompts import SystemMessagePromptTemplate, HumanMessagePromptTemplate
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
-from langchain_community.document_loaders import TextLoader
-import os
-
-
-# def create_vector_store():
-#     embedding_function = OpenAIEmbeddings()
-#     data = TextLoader('dc_info.txt').load()
-#     text_splitter = RecursiveCharacterTextSplitter(separators=['\n\n\n'], chunk_size=1024, chunk_overlap=200)
-#     chunks1 = text_splitter.split_documents(data)
-#     db = Chroma.from_documents(chunks1, embedding_function, persist_directory='./vector_dc_info')
-#     db.persist()
-#     return db
-
+import streamlit as st
 
 def connect_to_vector_store():
     embedding_function = OpenAIEmbeddings()
     db = Chroma(persist_directory='./vector_dc_info', embedding_function=embedding_function)
     return db
 
-
-# def manage_vector_store():
-#     import os
-#     if os.path.exists('./vector_dc_info'):
-#         db = connect_to_vector_store()
-#     else:
-#         db = create_vector_store()
-#
-#     return db
 
 
 def create_system_message():
@@ -69,13 +47,14 @@ def create_human_message(question: str, db):
 
 
 def ask_about_daly_college(messages):
-    os.environ['GROQ_API_KEY'] = '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'
+    groq_api_key = st.secrets["general"]["groq_api_key"]
     llm = ChatGroq(
         model='llama-3.1-70b-versatile',
         temperature=0,
         max_tokens=None,
         timeout=None,
-        max_retries=2
+        max_retries=2,
+        api_key=groq_api_key
     )
     return llm.invoke(messages).content
 
