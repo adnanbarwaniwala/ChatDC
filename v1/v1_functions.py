@@ -1,12 +1,14 @@
 from langchain_groq import ChatGroq
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.prompts import SystemMessagePromptTemplate, HumanMessagePromptTemplate
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
+from langchain_community.document_loaders import TextLoader
 import streamlit as st
 
 
 def connect_to_vector_store():
-    embedding_function = OpenAIEmbeddings()
+    embedding_function = OpenAIEmbeddings(model='text-embedding-3-small', api_key=st.secrets['general']['openai_api_key'])
     db = Chroma(persist_directory='./vector_dc_info', embedding_function=embedding_function)
     return db
 
@@ -47,6 +49,7 @@ def create_human_message(question: str, db):
 
 
 def ask_about_daly_college(messages):
+    import streamlit as st
     groq_api_key = st.secrets["general"]["groq_api_key"]
     llm = ChatGroq(
         model='llama-3.1-70b-versatile',
