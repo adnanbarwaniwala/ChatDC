@@ -4,11 +4,11 @@ from langchain.prompts import SystemMessagePromptTemplate, HumanMessagePromptTem
 from langchain.vectorstores import Chroma
 import streamlit as st
 
+
 def connect_to_vector_store():
     embedding_function = OpenAIEmbeddings()
     db = Chroma(persist_directory='./vector_dc_info', embedding_function=embedding_function)
     return db
-
 
 
 def create_system_message():
