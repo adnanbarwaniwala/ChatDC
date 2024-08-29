@@ -2,6 +2,7 @@ langchain
 langchain_community
 langchain_groq
 streamlit
+streamlit_chat
 openai
 chromadb
 tiktoken
