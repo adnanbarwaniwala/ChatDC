@@ -4,6 +4,8 @@
 **Note:** *As I update the project, I'll create different versions. Currently, the first version of the project `v1` is available and I'm working on `v2`, the second version. The code for each version can be found in their relevant directories.* 
 
 ## Project Structure
+The repository is organized as follows:
+├── v1 │ ├── vector_dc_info/ │ │ └── [vector database files] │ ├── dc_info.txt │ ├── v1_functions.py │ └── v1_gui.py ├── requirements.txt └── LICENSE
 
 
 ## Working
