@@ -7,29 +7,9 @@ from langchain_community.document_loaders import TextLoader
 import streamlit as st
 
 
-def create_vector_store():
-    embedding_function = OpenAIEmbeddings(model='text-embedding-3-small', api_key=st.secrets['general']['openai_api_key'])
-    data = TextLoader('dc_info.txt').load()
-    text_splitter = RecursiveCharacterTextSplitter(separators=['\n\n\n'], chunk_size=1024, chunk_overlap=200)
-    chunks1 = text_splitter.split_documents(data)
-    db = Chroma.from_documents(chunks1, embedding_function, persist_directory='./vector_dc_info')
-    db.persist()
-    return db
-
-
 def connect_to_vector_store():
     embedding_function = OpenAIEmbeddings(model='text-embedding-3-small', api_key=st.secrets['general']['openai_api_key'])
     db = Chroma(persist_directory='./vector_dc_info', embedding_function=embedding_function)
-    return db
-
-
-def manage_vector_store():
-    import os
-    if os.path.exists('./vector_dc_info'):
-        db = connect_to_vector_store()
-    else:
-        db = create_vector_store()
-
     return db
 
 
