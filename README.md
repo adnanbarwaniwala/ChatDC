@@ -5,7 +5,12 @@
 
 ## Project Structure
 The repository is organized as follows:
-├── v1 │ ├── vector_dc_info/ │ │ └── [vector database files] │ ├── dc_info.txt │ ├── v1_functions.py │ └── v1_gui.py ├── requirements.txt └── LICENSE
+### v1 Directory - First Version of the Project
+
+- **vector_dc_info/**: This folder contains the vector database used in the project. It stores the vectorized information for the school database.
+- **dc_info.txt**: A text file containing all the information about the school.
+- **v1_functions.py**: This script includes all the functions used in the project.
+- **v1_gui.py**: This script contains the code for the GUI (Graphical User Interface) of the project.
 
 
 ## Working
