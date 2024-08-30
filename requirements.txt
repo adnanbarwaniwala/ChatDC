@@ -6,4 +6,3 @@ streamlit_chat
 openai
 chromadb
 tiktoken
-protobuf==3.20.*
