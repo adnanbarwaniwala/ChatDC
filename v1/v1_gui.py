@@ -13,7 +13,7 @@ st.subheader('ChatDC :robot_face:')
 if 'messages' not in st.session_state:
     st.session_state.messages = []
 if 'db' not in st.session_state:
-    st.session_state.db = manage_vector_store()
+    st.session_state.db = connect_to_vector_store()
 if 'user_questions' not in st.session_state:
     st.session_state.user_questions = []
 if 'memory' not in st.session_state:
