@@ -1,7 +1,7 @@
-from langchain.schema import AIMessage
+from langchain_core.messages import AIMessage
 from langchain.memory import ConversationBufferWindowMemory
-import streamlit as st
 from v1_functions import *
+import streamlit as st
 from streamlit_chat import message
 
 st.set_page_config(
@@ -13,7 +13,7 @@ st.subheader('ChatDC :robot_face:')
 if 'messages' not in st.session_state:
     st.session_state.messages = []
 if 'db' not in st.session_state:
-    st.session_state.db = connect_to_vector_store()
+    st.session_state.db = manage_vector_store()
 if 'user_questions' not in st.session_state:
     st.session_state.user_questions = []
 if 'memory' not in st.session_state:
@@ -37,7 +37,8 @@ with st.sidebar:
         ai_message = AIMessage(content=response)
         st.session_state.messages.append(ai_message)
 
-        st.session_state.memory.save_context({'input': human_message.content}, {'output': ai_message.content})
+        st.session_state.memory.chat_memory.add_user_message(human_message.content)
+        st.session_state.memory.chat_memory.add_ai_message(ai_message.content)
 
 for i, msg in enumerate(st.session_state.messages):
     if i % 2 == 0:
