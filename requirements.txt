@@ -1,4 +1,7 @@
 langchain
+langchain_openai
+langchain_core
+langchain_chroma
 langchain_community
 langchain_groq
 streamlit
