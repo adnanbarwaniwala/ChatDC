@@ -20,3 +20,14 @@
 - Expanding the information about DC in the database
 - Building `v2` of ChatDC using LangGraph and LangChain agents.
 
+## License
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+For questions or suggestions, please open an issue or contact me directly:
+
+- **Email**: adnanbarwaniwala7@gmail.com
+
+## 🙏 Thank You
+Thank you for spending time on my repo. Hope you enjoyed it!
+
