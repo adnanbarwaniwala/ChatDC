@@ -6,4 +6,3 @@ streamlit_chat
 openai
 chromadb
 tiktoken
-sqlite3 >= 3.35.0
