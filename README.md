@@ -30,6 +30,10 @@
 - **Database Expansion**: Adding more information about Daly College.
 - **`v2` Development**: Building the next version using LangGraph and LangChain agents.
 
+## Webiste
+I tried deploying my app on Streamit Cloud, but due to some errors, it isn't working. I'm trying to resolve them.
+If you want to check out my website: [**ChatDC**](https://chat-dc.streamlit.app)
+
 ## License
 
 This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
