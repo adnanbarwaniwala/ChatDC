@@ -1,40 +1,45 @@
 # ChatDC
-**ChatDC** is a **chatbot** for my school **Daly College (DC), Indore**. It uses the `llama-3.1-70b-versatile` LLM along with the `Chroma` vector database to answer user queries about my school. This repository contains all the project code and code for its **GUI**. 
 
-**Note:** *As I update the project, I'll create different versions. Currently, the first version of the project `v1` is available and I'm working on `v2`, the second version. The code for each version can be found in their relevant directories.* 
+**ChatDC** is a **chatbot** designed for **Daly College (DC), Indore**. Powered by the `llama-3.1-70b-versatile` LLM and the `Chroma` vector database, it provides detailed responses to queries about the school. This repository includes all project code, including the **GUI**.
+
+> **Note:** This project is versioned. The first version (`v1`) is currently available, with `v2` under development. Each version's code is in its respective directory.
 
 ## Project Structure
-The repository is organized as follows:
-### v1 Directory - First Version of the Project
 
-- **vector_dc_info/**: This folder contains the vector database used in the project. It stores the vectorized information for the school database.
-- **dc_info.txt**: A text file containing all the information about the school.
-- **v1_functions.py**: This script includes all the functions used in the project.
-- **v1_gui.py**: This script contains the code for the GUI (Graphical User Interface) of the project.
+### 📁 `v1` - First Version
 
+- **`vector_dc_info/`**: Contains the vector database storing the vectorized information about DC.
+- **`dc_info.txt`**: A text file with comprehensive details about Daly College.
+- **`v1_functions.py`**: Functions used across the project.
+- **`v1_gui.py`**: Code for the project's **Graphical User Interface** (GUI).
 
-## Working
-- Enter the query using the GUI built with `streamlit`
-- Similarity search is carried out with the contents of the vector database
-- The question, along with the most similar chunks, are appended to a prompt sent to the LLM
-- The LLM generates a response
+## How It Works
 
-## Additional Features
-- History of previous conversations is provided to the LLM to maintain conversational context.
-- The history of all the previous interactions is visible in GUI.
+1. **Query Submission**: Enter your query via the Streamlit-based GUI.
+2. **Similarity Search**: The query is matched against the vector database.
+3. **LLM Response**: The most similar chunks are appended to the query and sent to the LLM, which generates a response.
+4. **Context Maintenance**: The chatbot maintains conversational context using previous interactions.
 
-## Further Improvements
-- Expanding the information about DC in the database
-- Building `v2` of ChatDC using LangGraph and LangChain agents.
+## Features
+
+- **Conversation History**: Previous interactions are visible in the GUI and provided to the LLM for context.
+- **Expandable Database**: The database can be expanded to include more information about Daly College.
+
+## Future Plans
+
+- **Database Expansion**: Adding more information about Daly College.
+- **`v2` Development**: Building the next version using LangGraph and LangChain agents.
 
 ## License
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
-For questions or suggestions, please open an issue or contact me directly:
 
-- **Email**: adnanbarwaniwala7@gmail.com
+For questions or suggestions, feel free to open an issue or reach out:
+
+- **Email**: [adnanbarwaniwala7@gmail.com](mailto:adnanbarwaniwala7@gmail.com)
 
 ## 🙏 Thank You
-Thank you for spending time on my repo. Hope you enjoyed it!
 
+Thank you for exploring ChatDC! I hope you find it useful.
