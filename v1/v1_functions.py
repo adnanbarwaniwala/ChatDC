@@ -14,11 +14,8 @@ def connect_to_vector_store():
 
 
 def create_system_message():
-    system_template = """"You answer user queries based on context provided to you. If the context 
-    does not contain relevant information to the question or sufficient information, or if it falls outside your 
-    knowledge base, respond politely with 'I don't know'. This way your responses are grounded in the most relevant 
-    information available to you. My school's name is Daly College, also referred to as DC."""
-
+    system_template = """"You're a chatbot that assists users with queries about my school Daly College, also called DC.
+    You have a friendly conversation with them, answering all their queries very accurately."""
     system_message = SystemMessage(content=system_template)
     return system_message
 
@@ -29,17 +26,14 @@ def create_human_message(question: str, db):
     Context:
     ```{}```
 
-    Answer this question using the above context:
+    Query:
     ```{}```
 
-    Guidelines for Answering: 1. Base your answer primarily on the provided context. 2. If the question is general 
-    and relates to a domain you have knowledge about, you may supplement the answer with relevant points. However, 
-    ensure these additions are directly relevant to the user's question. 3. If the provided context does not contain 
-    information related to the question, or the question is outside your knowledge domain, respond politely with 'I don't 
-    know'. 4. Keep your answer concise and focused. Don't include any information that does not directly contribute 
-    to answering the user's question.
-
-    Adhere to these guidelines to ensure accurate and useful responses to the user asking questions about DC."""
+    Guidelines for Answering:
+    - If the user query is general and not related to DC, answer it using your knowledge and without the context.
+    - Else use the context to answer the query if it's related to DC.
+    - If neither the context nor your knowledge provides an answer, apologize and politely state you don't know the answer.
+    - Answer concisely. Don't include any unnecessary information."""
 
     similar_contexts = db.similarity_search(question, k=2)
     context = '\n\n\n'.join([c.page_content for c in similar_contexts])
