@@ -8,5 +8,4 @@ langchain_openai==0.3.2
 langchain_text_splitters==0.3.5
 streamlit==1.38.0
 streamlit_chat==0.1.1
-tiktoken==0.5.1
 tiktoken==0.7.0
