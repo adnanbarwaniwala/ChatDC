@@ -1,7 +1,7 @@
 import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain.memory import ConversationBufferWindowMemory
-from v1_functions import *
+from functions import *
 
 st.set_page_config(
     page_title='ChatDC',
