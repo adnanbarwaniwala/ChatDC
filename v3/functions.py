@@ -1,3 +1,4 @@
+import os
 from langchain_openai import OpenAIEmbeddings
 from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_text_splitters import RecursiveCharacterTextSplitter
