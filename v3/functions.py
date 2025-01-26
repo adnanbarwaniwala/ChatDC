@@ -10,7 +10,7 @@ import tiktoken
 
 
 def create_vector_store():
-    embedding_function = OpenAIEmbeddings(api_key=st.secrets['general']['openai_api_key'])
+    embedding_function = OpenAIEmbeddings()
     with open("dc_info.txt", 'rb') as f:
         result = chardet.detect(f.read())
         encoding = result['encoding']
@@ -23,7 +23,7 @@ def create_vector_store():
 
 
 def connect_to_vector_store():
-    embedding_function = OpenAIEmbeddings(api_key=st.secrets['general']['openai_api_key'])
+    embedding_function = OpenAIEmbeddings()
     db = Chroma(persist_directory='./vector_dc_info', embedding_function=embedding_function)
     return db
 
@@ -47,7 +47,7 @@ def create_system_message():
 
 def create_human_message(prv_messages, question: str, db):
     with st.spinner("Expanding user query...."):
-        client = OpenAI(api_key=st.secrets['general']['deepseek_api_key'], base_url="https://api.deepseek.com")
+        client = OpenAI(base_url="https://api.deepseek.com")
 
         messages = [{
             'role': 'system',
@@ -133,7 +133,7 @@ def create_human_message(prv_messages, question: str, db):
 
 def ask_about_daly_college(msgs):
     with st.spinner("Querying model..."):
-        client = OpenAI(api_key=st.secrets['general']['deepseek_api_key'], base_url="https://api.deepseek.com")
+        client = OpenAI(base_url="https://api.deepseek.com")
 
         messages = [{"role": "system", "content": msgs[0].content}]
         for index, message in enumerate(msgs[1:]):
