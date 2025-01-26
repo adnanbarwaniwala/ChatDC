@@ -48,7 +48,7 @@ def create_system_message():
 
 def create_human_message(prv_messages, question: str, db):
     with st.spinner("Expanding user query...."):
-        client = OpenAI(api_key=api_key=os.getenv("DEEPSEEK_API_KEY"), base_url="https://api.deepseek.com")
+        client = OpenAI(api_key=os.getenv("DEEPSEEK_API_KEY"), base_url="https://api.deepseek.com")
 
         messages = [{
             'role': 'system',
@@ -118,7 +118,7 @@ def create_human_message(prv_messages, question: str, db):
 
 def ask_about_daly_college(msgs):
     with st.spinner("Querying model..."):
-        client = OpenAI(api_key=api_key=os.getenv("DEEPSEEK_API_KEY"), base_url="https://api.deepseek.com")
+        client = OpenAI(api_key=os.getenv("DEEPSEEK_API_KEY"), base_url="https://api.deepseek.com")
 
         messages = [{"role": "system", "content": msgs[0].content}]
         for index, message in enumerate(msgs[1:]):
