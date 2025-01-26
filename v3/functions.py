@@ -1,3 +1,4 @@
+import os
 from langchain_openai import OpenAIEmbeddings
 from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -10,7 +11,7 @@ import tiktoken
 
 
 def create_vector_store():
-    embedding_function = OpenAIEmbeddings()
+    embedding_function = OpenAIEmbeddings(api_key=os.getenv("OPENAI_API_KEY"))
     with open("dc_info.txt", 'rb') as f:
         result = chardet.detect(f.read())
         encoding = result['encoding']
@@ -23,7 +24,7 @@ def create_vector_store():
 
 
 def connect_to_vector_store():
-    embedding_function = OpenAIEmbeddings()
+    embedding_function = OpenAIEmbeddings(api_key=os.getenv("OPENAI_API_KEY"))
     db = Chroma(persist_directory='./vector_dc_info', embedding_function=embedding_function)
     return db
 
@@ -47,7 +48,7 @@ def create_system_message():
 
 def create_human_message(prv_messages, question: str, db):
     with st.spinner("Expanding user query...."):
-        client = OpenAI(base_url="https://api.deepseek.com")
+        client = OpenAI(api_key=api_key=os.getenv("DEEPSEEK_API_KEY"), base_url="https://api.deepseek.com")
 
         messages = [{
             'role': 'system',
@@ -61,11 +62,6 @@ def create_human_message(prv_messages, question: str, db):
 
         messages.append({
             'role': 'user',
-            # 'content': f"""Using the context of these previous conversations, frame this user query into a proper question \
-            # that can be sent to a vector database to retrieve appropriate contexts related to the user query. Only provide \
-            # the final question and no other text. The question should be short and concise.
-            # User query: {question}"""
-
             'content': f"""You have access to the conversation history between a user and AI, as well as a 
             new user question. The new user question is: {question}
             Your task is as follows:
@@ -97,17 +93,6 @@ def create_human_message(prv_messages, question: str, db):
 
     with st.spinner("Retrieving relevant contexts..."):
         similar_contexts = db.similarity_search(llm_question, k=3)
-        # tokenizer = tiktoken.encoding_for_model("gpt-3.5-turbo")
-        # total_tokens = 0
-        # included_contexts = []
-        # for context in similar_contexts:
-        #     context_tokens = len(tokenizer.encode(context.page_content))
-        #     if total_tokens + context_tokens <= 4000:
-        #         included_contexts.append(context)
-        #         total_tokens += context_tokens
-        #     else:
-        #         break
-
         human_template = """My school's name is Daly College, also referred to as DC.
         Context:
         ```{}```
@@ -133,7 +118,7 @@ def create_human_message(prv_messages, question: str, db):
 
 def ask_about_daly_college(msgs):
     with st.spinner("Querying model..."):
-        client = OpenAI(base_url="https://api.deepseek.com")
+        client = OpenAI(api_key=api_key=os.getenv("DEEPSEEK_API_KEY"), base_url="https://api.deepseek.com")
 
         messages = [{"role": "system", "content": msgs[0].content}]
         for index, message in enumerate(msgs[1:]):
