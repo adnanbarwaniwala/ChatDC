@@ -64,8 +64,8 @@ def create_human_message(prv_messages, question: str, db):
             'role': 'user',
             'content': f"""You have access to the conversation history between a user and AI, as well as a 
             new user question. The new user question is: {question}
-            Your task is as follows:
-            1. Determine if the new question depends on the conversation history.
+            Follow these instructions in order:
+            1. Analyse if the new question depends on the conversation history.
                 - If it relies on the conversation history, reframe or expand the question to incorporate any relevant
                 details to become self-contained and clear.
                 - If it does not rely on the conversation history or if it's the first user question, leave the question 
