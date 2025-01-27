@@ -16,11 +16,13 @@ Explore various topics about Daly College and find answers to your questions. Be
 topics = {
     "🏛 Overview and History": [
         "🕰 Founding of Daly College",
-        "📍 The school's location and setup as a day-cum-boarding school"
+        "📍 The school's location and setup as a day-cum-boarding school",
+        "📜 Legacy of Sir Henry Daly and the Indo-Saracenic architectural style"
     ],
     "📋 School Administration": [
         "👩‍🏫 Current and past principals",
-        "👨‍🏫 Vice Principals and administrative structure"
+        "👨‍🏫 Vice Principals and administrative structure",
+        "🛡 Members of the Board of Governors and their roles"
     ],
     "📚 Educational Boards": [
         "🎓 Offerings of CBSE and Cambridge International (CI) boards",
@@ -28,6 +30,7 @@ topics = {
     ],
     "🏠 Houses and Residences": [
         "👦 Boys' and Girls' boarding houses",
+        "📊 House Reports"
         "👶 Residences for students of different age groups"
     ],
     "🎒 Levels of Schooling": [
@@ -49,6 +52,14 @@ topics = {
     ],
     "📈 Academic Performance": [
         "📝 Results and academic achievements in CI and CBSE boards"
+    ],
+    "👩‍🎓 Student Leadership": [
+        "🎖 Student captains and prefects",
+        "🛡 Roles and responsibilities of student leaders"
+    ],
+    "🧑‍🏫 Faculty and Departments": [
+        "📖 Departmental faculty and their specializations",
+        "📜 Senior appointments and their contributions"
     ]
 }
 
@@ -64,7 +75,3 @@ st.markdown("""
 ---
 ✨ **Ask any specific question related to the above topics, and ChatDC will provide detailed answers tailored to your queries!** ✨
 """)
-
-
-
-
