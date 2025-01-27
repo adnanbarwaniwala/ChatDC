@@ -10,29 +10,21 @@
 
 - **`vector_dc_info/`**: Stores the vectorized information about DC as embeddings.
 - **`dc_info.txt`**: A text file with comprehensive details about Daly College. Its information is vectorised and stored in the `vector_dc_nfo` directory.
-- **`functions.py`**: Functions used across the project.
-- **`v1_gui.py`**: Code for the project's **Graphical User Interface** (GUI).
+- **`v3_functions.py`**: Functions used across the project.
+- **`1_Overview.py`**: Code for the GUI of the project's welcome page.
+- **`pages/2_ChatDC.py`**: Code for GUI of the project's main page. It allows the user to ask questions about Daly College. 
 
-## How It Works
+## Features and Working
 
 1. **Query Submission**: Enter your query via the Streamlit-based GUI.
-2. **Similarity Search**: The query is matched against the vector database.
-3. **LLM Response**: The most similar chunks are appended to the query and sent to the LLM, which generates a response.
-4. **Context Maintenance**: The chatbot maintains conversational context using previous interactions.
-
-## Features
-
-- **Conversation History**: Previous interactions are visible in the GUI and provided to the LLM for context.
-- **Expandable Database**: The database can be expanded to include more information about Daly College.
-
-## Future Plans
-
-- **Database Expansion**: Adding more information about Daly College.
-- **`v2` Development**: Building the next version using LangGraph and LangChain agents.
+2. **Query Expansion**: The query is expanded by the `Deepseek-R1 LLM` to improve its clarity and to include the context of previous interactions if required. 
+3. **Similarity Search**: The expanded query is matched against the vector database.
+4. **LLM Response**: The most similar chunks are appended to the query and sent to the LLM, which generates a response.
+5. **Context Maintenance**: The chatbot maintains conversational context using previous interactions.
+6. **Expandable Database**: The database can be expanded to include more information about Daly College.
 
 ## Webiste
-I tried deploying my app on Streamit Cloud, but due to some errors, it isn't working. I'm trying to resolve them.
-If you want to check out my website: [**ChatDC**](https://chat-dc.streamlit.app)
+You can try out the latest version of ChatDC here: [**ChatDC**](https://chatdc.onrender.com)
 
 ## License
 
