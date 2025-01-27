@@ -23,11 +23,11 @@
 5. **Context Maintenance**: The chatbot maintains conversational context using previous interactions.
 6. **Expandable Database**: The database can be expanded to include more information about Daly College.
 
-## Version 2 Improvements
+## v2 Improvements
 - **Expanded Event Coverage**:  
   ChatDC can now answer questions about almost all 2023 events and activities at Daly College.
 
-## Version 3 Improvements
+## v3 Improvements
 - **Enhanced Knowledge Base**:  
   Can provide in-depth information on school facilities, educational boards, and faculty details now.
 - **Advanced LLM Upgrade**:  
