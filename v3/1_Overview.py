@@ -30,7 +30,7 @@ topics = {
     ],
     "🏠 Houses and Residences": [
         "👦 Boys' and Girls' boarding houses",
-        "📊 House Reports"
+        "📊 House Reports",
         "👶 Residences for students of different age groups"
     ],
     "🎒 Levels of Schooling": [
