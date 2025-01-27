@@ -66,16 +66,18 @@ def create_human_message(prv_messages, question: str, db):
             new user question. The new user question is: {question}
             Your task is as follows:
             1. Determine if the new question depends on the conversation history.
-                - If it does rely on the conversation history, reframe or expand the question to incorporate any relevant 
-                details so that it becomes self-contained and clear.
-                - If it does not rely on the conversation history or if its the first user question, leave the question 
+                - If it relies on the conversation history, reframe or expand the question to incorporate any relevant
+                details to become self-contained and clear.
+                - If it does not rely on the conversation history or if it's the first user question, leave the question 
                 unchanged.
             2. Output only the final version of the question —either revised or original— without any additional commentary 
             or explanation.
             3. Whenever you're thinking of mentioning Daly College in the final version of the question, mention it as 
             DC always.
-            4. If the user is asking an event's date, it's mentioned in the school calendar. Add to the final version of 
-            the question that the required info is mentioned in the school calendar."""
+            4. If the user asks for an event's date, it's mentioned in the school calendar. Add to the final version of 
+            the question that the required info is mentioned in the school calendar.
+            5. If the user asks about teachers or faculty members, it must be mentioned under a department's faculty or Senior Appointments.
+            Add this info to the final version of the question."""
         })
 
         response = client.chat.completions.create(
