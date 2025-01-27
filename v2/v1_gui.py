@@ -1,6 +1,6 @@
 from langchain_core.messages import AIMessage
 from langchain.memory import ConversationBufferWindowMemory
-from v1_functions import *
+from v2_functions import *
 import streamlit as st
 from streamlit_chat import message
 import tiktoken
