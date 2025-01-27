@@ -11,7 +11,7 @@ st.set_page_config(
 col1, col2 = st.columns([1, 4])  # Create two columns for alignment
 with col1:
     # Add the circular image
-    st.image('v3/daly_college_logo.png', use_column_width=False)
+    st.image('daly_college_logo.png', use_column_width=False)
 with col2:
     st.markdown(
         """
