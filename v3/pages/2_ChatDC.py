@@ -22,6 +22,9 @@ with col2:
         unsafe_allow_html=True,
     )
 
+st.info("If the LLM isn’t able to answer your question, please try being more specific "
+        "and include all relevant information.", icon="ℹ️")
+
 if 'messages' not in st.session_state:
     st.session_state.messages = []
 if 'db' not in st.session_state:
