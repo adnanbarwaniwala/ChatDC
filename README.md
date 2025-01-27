@@ -24,17 +24,17 @@
 6. **Expandable Database**: The database can be expanded to include more information about Daly College.
 
 ## Version 2 Improvements
-- **Expanded Event Coverage**  
+- **Expanded Event Coverage**:  
   ChatDC can now answer questions about almost all 2023 events and activities at Daly College.
 
 ## Version 3 Improvements
-- **Enhanced Knowledge Base**  
+- **Enhanced Knowledge Base**:  
   Can provide in-depth information on school facilities, educational boards, and faculty details now.
-- **Advanced LLM Upgrade**  
-  Switched from `Llama-3.3-70b-versatile` to **Deepseek-R1** for more accurate, context-aware answers.  
-- **Real-Time Response Streaming**  
+- **Advanced LLM Upgrade**:  
+  Switched from `Llama-3.3-70b-versatile` to `Deepseek-R1` for more accurate, context-aware answers as it can think before answering.  
+- **Real-Time Response Streaming**:  
   Answers from the LLM are streamed to the user in real time.  
-- **Improved User Interface**  
+- **Improved User Interface**:  
   Added a new welcome page that provides an overview of the app and its features.
  
 ## Website
