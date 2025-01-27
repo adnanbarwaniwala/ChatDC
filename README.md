@@ -1,16 +1,16 @@
 # ChatDC
 
-**ChatDC** is a **chatbot** designed for **Daly College (DC), Indore**. Powered by the `llama-3.1-70b-versatile` LLM and the `Chroma` vector database, it provides detailed responses to queries about the school. This repository includes all project code, including the **GUI**.
+**ChatDC** is a **chatbot** designed for **Daly College (DC), Indore**. Powered by the `Deepseek-R1` LLM and the `Chroma` vector database, it provides detailed responses to queries about the school. This repository includes all project code, including the **GUI**.
 
-> **Note:** This project is versioned. The first version (`v1`) is currently available, with `v2` under development. Each version's code is in its respective directory.
+> **Note:** This project is versioned. Each version's code is in its respective directory.
 
 ## Project Structure
 
-### 📁 `v1` - First Version
+### 📁 `v3` - Third (Latest) Version
 
-- **`vector_dc_info/`**: Contains the vector database storing the vectorized information about DC.
-- **`dc_info.txt`**: A text file with comprehensive details about Daly College.
-- **`v1_functions.py`**: Functions used across the project.
+- **`vector_dc_info/`**: Stores the vectorized information about DC as embeddings.
+- **`dc_info.txt`**: A text file with comprehensive details about Daly College. Its information is vectorised and stored in the `vector_dc_nfo` directory.
+- **`functions.py`**: Functions used across the project.
 - **`v1_gui.py`**: Code for the project's **Graphical User Interface** (GUI).
 
 ## How It Works
