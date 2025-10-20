@@ -9,7 +9,7 @@
 ### 📁 `v3` - Third (Latest) Version
 
 - **`vector_dc_info/`**: Stores the vectorized information about DC as embeddings.
-- **`dc_info.txt`**: A text file with comprehensive details about Daly College. Its information is vectorised and stored in the `vector_dc_nfo` directory.
+- **`dc_info.txt`**: A text file with comprehensive details about Daly College. Its information is vectorised and stored in the `vector_dc_info` directory.
 - **`v3_functions.py`**: Functions used across the project.
 - **`1_Overview.py`**: Code for the GUI of the project's welcome page.
 - **`pages/2_ChatDC.py`**: Code for GUI of the project's main page. It allows the user to ask questions about Daly College. 
